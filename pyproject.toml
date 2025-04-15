@@ -12,7 +12,10 @@ dependencies = [
     "streamlit>=1.20.0"
 ]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9.18"
+
+[project.scripts]
+kmeans_medicine_recommender = "kmeans_medicine_recommender.app:main"
 
 [build-system]
 requires = ["setuptools", "wheel"]
