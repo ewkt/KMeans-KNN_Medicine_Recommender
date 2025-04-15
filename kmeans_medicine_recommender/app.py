@@ -6,13 +6,15 @@ from src.kmeans import KMeansClustering
 
 st.title("Predict which medication to use!")
 
-st.loader("Loading the Kmeans model...")
+with st.spinner("Loading the Kmeans model..."):
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(base_dir, 'data', 'medical_data.csv')
 
-prerpocess = DataPrep()
-df = prerpocess.main()
+    prerpocess = DataPrep(data_path)
+    df = prerpocess.main()
 
-model = KMeansClustering(nb_clusters=15, df=df)
-model.train()
+    model = KMeansClustering(nb_clusters=15, df=df)
+    model.train()
 
 st.success("Model trained successfully!")
 

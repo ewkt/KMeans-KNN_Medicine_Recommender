@@ -3,7 +3,7 @@ import pandas as pd
 
 
 class DataPrep:
-    def __init__(self):
+    def __init__(self, path):
         """
         This class is used to prepare the data for analysis.
         It includes functions to process rows, set uncommon values to 'other',
@@ -11,6 +11,7 @@ class DataPrep:
         """
         self.re1 = r"shortness(\s*of\s*brea(th|t)?)?"
         self.re2 = r'[a-z_-]*covid(-19)?_exposure[a-z_-]*'
+        self.path = path
 
     def process_row(self, row):
         """
@@ -45,7 +46,7 @@ class DataPrep:
         """
         #Data Imported from Kaggle:
         #https://www.kaggle.com/datasets/joymarhew/medical-reccomadation-dataset
-        df_raw = pd.read_csv('../data/medical_data.csv')
+        df_raw = pd.read_csv(self.path)
 
         df = df_raw.copy()
         df.drop(columns=['Name'], inplace=True)
