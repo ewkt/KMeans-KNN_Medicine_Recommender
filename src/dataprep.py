@@ -70,7 +70,7 @@ class DataPrep:
         df['Symptoms'] = df['Symptoms'].apply(lambda x: self.process_row(x))
         df['Medicine'] = df['Medicine'].apply(lambda x: self.process_row(x))
         df['Causes'] = df['Causes'].apply(lambda x: self.process_row(x))
-        df['Disease'] = df['Disease'].apply(lambda x: list(x))
+        df['Disease'] = df['Disease'].apply(lambda x: [x])
 
         return df
     
