@@ -1,7 +1,7 @@
 [project]
-name = "kmeans_medicine_recommender"
+name = "medicine_recommender"
 version = "1.0.0"
-description = "App for predicting medicine using KMeans clustering on a synthetic Kaggle dataset."
+description = "App for predicting medicine using KMeans or KNN clustering on a synthetic Kaggle dataset."
 authors = [
     { name = "ewkt" }
 ]
@@ -15,7 +15,7 @@ readme = "README.md"
 requires-python = ">=3.9.18"
 
 [project.scripts]
-kmeans_medicine_recommender = "kmeans_medicine_recommender.app:main"
+medicine_recommender = "medicine_recommender.app:main"
 
 [build-system]
 requires = ["setuptools", "wheel"]
@@ -23,5 +23,5 @@ build-backend = "setuptools.build_meta"
 
 [tool.poetry]
 packages = [
-    { include = "kmeans_medicine_recommender" }
+    { include = "medicine_recommender" }
 ]

@@ -3,7 +3,6 @@ import numpy as np
 
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import MultiLabelBinarizer
-from sklearn.model_selection import train_test_split
 
 class KMeansClustering():
     def __init__(self, nb_clusters, df):
@@ -61,8 +60,7 @@ class KMeansClustering():
         """
         This function runs the main pipeline.
         """
-        X_train, _ = train_test_split(self.df[['Symptoms', 'Disease', 'Causes', 'Medicine']], 
-                                                    test_size=0.2, random_state=113)
+        X_train = self.df[['Symptoms', 'Disease', 'Causes', 'Medicine']]
         self.fit_mlbs(X_train)
         clusters = self.pipeline(X=X_train, train=True)
         self.cluster_top_medicine = self.top_medicines(X_train, clusters)
