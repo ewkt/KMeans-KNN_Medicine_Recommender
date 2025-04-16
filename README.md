@@ -1,4 +1,4 @@
-# KMeans_Medicine_Recommender
+# Medicine Recommender System
 App for Predicting Medicine from a synthetic Kaggle Dataset
 
 Dataset used: [here](https://www.kaggle.com/datasets/joymarhew/medical-reccomadation-dataset). Note: this dataset is very small and entirely synthetic with a lot of un-clean data.
