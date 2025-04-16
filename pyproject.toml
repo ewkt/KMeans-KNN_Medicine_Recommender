@@ -1,6 +1,6 @@
 [project]
 name = "medicine_recommender"
-version = "1.0.0"
+version = "2.0.0"
 description = "App for predicting medicine using KMeans or KNN clustering on a synthetic Kaggle dataset."
 authors = [
     { name = "ewkt" }
