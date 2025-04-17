@@ -13,7 +13,7 @@ class KnnClustering():
 
     def fit_encoders(self, X, y):
         """
-        This function fits the MultiLabelBinarizer to the data.
+        This function fits the data encoders to the training data.
         """
         self.encoders[0].fit(X['Symptoms'])
         self.encoders[1].fit(X['Disease'])
@@ -21,6 +21,9 @@ class KnnClustering():
         self.encoders[3].fit(y)
 
     def encode_features(self, X):
+        """
+        This prepares a feature matrix for the KNN model.
+        """
         X_symptoms = self.encoders[0].transform(X['Symptoms'])
         X_diseases = self.encoders[1].transform(X['Disease'])
         X_causes = self.encoders[2].transform(X['Causes'])
@@ -41,7 +44,8 @@ class KnnClustering():
 
     def infer(self, symptoms, disease, causes):
         """
-        This function returns medicine predictions for the KNN model.
+        This function returns medicine predictions for the KNN model,
+        from new user input data
         """
         df_infer = pd.DataFrame({'Symptoms': [symptoms], 
                         'Disease': [disease], 
